@@ -4,7 +4,11 @@ import {Text, StyleSheet, View, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
 import {TextInput} from 'react-native-gesture-handler';
 
-const HomeScreen = (props) => {
+interface Props {
+  navigation: any;
+}
+
+const HomeScreen: React.FC<Props> = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [displayValue, setDisplayValue] = useState('');
 
@@ -34,6 +38,12 @@ const HomeScreen = (props) => {
         title="Go to Mobile List Screen"
         buttonStyle={styles.buttonStyle}
         onPress={() => props.navigation.navigate('MobileList')}
+      />
+      <Button
+        type="solid"
+        title="Go to Login Screen"
+        buttonStyle={styles.buttonStyle}
+        onPress={() => props.navigation.navigate('Login')}
       />
     </View>
   );
