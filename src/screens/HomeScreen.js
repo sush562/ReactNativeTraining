@@ -1,37 +1,38 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import { Text, StyleSheet, View, Button, Alert } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import {Text, StyleSheet, View, Alert} from 'react-native';
+import {Button} from 'react-native-elements';
+import {TextInput} from 'react-native-gesture-handler';
 
 const HomeScreen = (props) => {
-  const [inputValue, setInputValue] = useState('')
-  const [displayValue, setDisplayValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
+  const [displayValue, setDisplayValue] = useState('');
 
   return (
     <View>
-      <Text style={styles.headerTextStyle}>{displayValue ? displayValue : 'This is header title'}</Text>
+      <Text style={styles.headerTextStyle}>
+        {displayValue ? displayValue : 'This is header title'}
+      </Text>
       <TextInput
         style={styles.input}
         onChangeText={(newValue) => setInputValue(newValue)}
       />
       <Button
-        style={styles.buttonStyle}
+        buttonStyle={styles.buttonStyle}
+        type="solid"
         title="Set Title"
         onPress={() => {
           if (inputValue) {
-            setDisplayValue(inputValue)
+            setDisplayValue(inputValue);
           } else {
-            Alert.alert(
-              "Error",
-              "Please enter some text"
-            )
+            Alert.alert('Error', 'Please enter some text');
           }
-
         }}
       />
       <Button
-        style={styles.button}
+        type="solid"
         title="Go to Mobile List Screen"
+        buttonStyle={styles.buttonStyle}
         onPress={() => props.navigation.navigate('MobileList')}
       />
     </View>
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   headerTextStyle: {
     fontSize: 25,
     fontStyle: 'italic',
-    padding: 10
+    padding: 10,
   },
   input: {
     margin: 10,
@@ -51,11 +52,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingStart: 10,
     paddingEnd: 10,
-    backgroundColor: "#ffffff"
+    backgroundColor: '#ffffff',
   },
-  button: {
-    marginTop: 5
-  }
+  buttonStyle: {
+    marginTop: 10,
+    marginStart: 10,
+    marginEnd: 10,
+  },
 });
 
 export default HomeScreen;
