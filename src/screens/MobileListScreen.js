@@ -4,7 +4,7 @@ import { Text, StyleSheet, View, Button, FlatList, Alert } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 
-const MobileListScreen = (props) => {
+export default function MobileListScreen(props) {
 
     const mobilecompanies = [
         { name: "Acer", count: 100, id: 1 },
@@ -115,5 +115,3 @@ const styles = StyleSheet.create({
         alignSelf: "stretch"
     }
 })
-
-export default MobileListScreen;

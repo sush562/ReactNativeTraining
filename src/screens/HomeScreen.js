@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Text, StyleSheet, View, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, Alert } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
 const HomeScreen = (props) => {
@@ -17,7 +17,17 @@ const HomeScreen = (props) => {
       <Button
         style={styles.buttonStyle}
         title="Set Title"
-        onPress={() => setDisplayValue(inputValue)}
+        onPress={() => {
+          if (inputValue) {
+            setDisplayValue(inputValue)
+          } else {
+            Alert.alert(
+              "Error",
+              "Please enter some text"
+            )
+          }
+
+        }}
       />
       <Button
         style={styles.button}
