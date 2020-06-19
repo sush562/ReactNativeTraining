@@ -51,6 +51,12 @@ const HomeScreen: React.FC<Props> = (props) => {
         buttonStyle={styles.buttonStyle}
         onPress={() => props.navigation.navigate('FruitList')}
       />
+      <Button
+        type="solid"
+        title="Go to Calculator Screen"
+        buttonStyle={styles.buttonStyle}
+        onPress={() => props.navigation.navigate('Calculator')}
+      />
     </View>
   );
 };

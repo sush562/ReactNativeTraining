@@ -7,6 +7,7 @@ import LoginScreen from './src/screens/login/LoginScreen';
 import LoginSuccess from './src/screens/login/LoginSuccessPage';
 import FruitList from './src/screens/fruitlist/FruitListScreen';
 import FruitDisplay from './src/screens/fruitlist/FruitDisplayScreen';
+import CalculatorScreen from './src/screens/calculator/CalculatorScreen';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -47,6 +48,11 @@ export default function App() {
           name="FruitDisplay"
           component={FruitDisplay}
           options={{...myOptions, title: 'Fruit'}}
+        />
+        <Stack.Screen
+          name="Calculator"
+          component={CalculatorScreen}
+          options={{...myOptions, title: 'Calculator'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
