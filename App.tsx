@@ -3,8 +3,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/screens/HomeScreen';
 import MobileListScreen from './src/screens/MobileListScreen';
-import LoginScreen from './src/screens/LoginScreen';
-import LoginSuccess from './src/screens/LoginSuccessPage';
+import LoginScreen from './src/screens/login/LoginScreen';
+import LoginSuccess from './src/screens/login/LoginSuccessPage';
+import FruitList from './src/screens/fruitlist/FruitListScreen';
+import FruitDisplay from './src/screens/fruitlist/FruitDisplayScreen';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -35,6 +37,16 @@ export default function App() {
           name="LoginSuccess"
           component={LoginSuccess}
           options={{...myOptions, title: 'Login Success'}}
+        />
+        <Stack.Screen
+          name="FruitList"
+          component={FruitList}
+          options={{...myOptions, title: 'Fruit List'}}
+        />
+        <Stack.Screen
+          name="FruitDisplay"
+          component={FruitDisplay}
+          options={{...myOptions, title: 'Fruit'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

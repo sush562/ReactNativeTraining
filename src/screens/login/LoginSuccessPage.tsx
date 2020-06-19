@@ -2,7 +2,12 @@ import React, {useState} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import {Button} from 'react-native-elements';
 
-const LoginSuccess = (props) => {
+interface Props {
+  navigation: any;
+  route: any;
+}
+
+const LoginSuccess: React.FC<Props> = (props) => {
   return (
     <View>
       <Text style={styles.textStyle}>

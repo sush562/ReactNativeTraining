@@ -3,7 +3,11 @@ import {TextInput} from 'react-native-gesture-handler';
 import {Text, StyleSheet, View, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
 
-const LoginScreen = (props) => {
+interface Props {
+  navigation: any;
+}
+
+const LoginScreen: React.FC<Props> = (props) => {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   return (
@@ -34,7 +38,7 @@ const LoginScreen = (props) => {
   );
 };
 
-function validate(props, username, password) {
+function validate(props: any, username: string, password: string) {
   if (!username) {
     Alert.alert('Error', 'Please enter username');
     return;
