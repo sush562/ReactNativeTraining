@@ -8,6 +8,7 @@ const CalculatorButton = ({
   setVal,
   calculate,
   isdisabled,
+  onBackSpace,
 }) => {
   return (
     <TouchableOpacity
@@ -15,14 +16,28 @@ const CalculatorButton = ({
       activeOpacity={isdisabled ? 1 : 0.7}
       style={[styles.buttonStyle]}
       onPress={() =>
-        handlePress(textshown, setOperator, onClear, setVal, calculate)
+        handlePress(
+          textshown,
+          setOperator,
+          onClear,
+          setVal,
+          calculate,
+          onBackSpace,
+        )
       }>
       <Text style={styles.buttonTextStyle}>{textshown}</Text>
     </TouchableOpacity>
   );
 };
 
-function handlePress(tag, setOperator, onClear, setVal, calculate) {
+function handlePress(
+  tag,
+  setOperator,
+  onClear,
+  setVal,
+  calculate,
+  onBackSpace,
+) {
   switch (tag) {
     case '+':
     case '-':
@@ -48,6 +63,9 @@ function handlePress(tag, setOperator, onClear, setVal, calculate) {
       break;
     case '=':
       calculate();
+      break;
+    case 'Backspace':
+      onBackSpace();
       break;
   }
 }

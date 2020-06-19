@@ -21,7 +21,19 @@ const CalculatorScreen = () => {
             setParam2('');
             setOperator('');
             setResult('');
-            console.log('CLEAR');
+          }}
+        />
+        <CalculatorButton
+          textshown="Backspace"
+          onBackSpace={() => {
+            backspace(
+              param1,
+              param2,
+              operator,
+              setParam1,
+              setParam2,
+              setOperator,
+            );
           }}
         />
       </View>
@@ -151,6 +163,25 @@ function validateInput(param1, param2, operator, val, setParam1, setParam2) {
       return;
     }
     setParam1(param1 + val);
+  }
+}
+
+function backspace(
+  param1,
+  param2,
+  operator,
+  setParam1,
+  setParam2,
+  setOperator,
+) {
+  if (param2) {
+    let val = param2.slice(0, -1);
+    setParam2(val);
+  } else if (operator) {
+    setOperator('');
+  } else if (param1) {
+    let val = param1.slice(0, -1);
+    setParam1(val);
   }
 }
 
