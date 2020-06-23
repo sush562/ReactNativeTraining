@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, View, FlatList} from 'react-native';
 import {Button} from 'react-native-elements';
+import {ListItem} from 'react-native-elements';
+import {ACTORS} from '../../../shared/actors';
 
 interface Props {
   navigation: any;
@@ -8,14 +10,29 @@ interface Props {
 }
 
 const LoginSuccess: React.FC<Props> = (props) => {
+  const [fruitslist] = useState(ACTORS);
+  const renderMenuItem = ({item, index}: any) => {
+    return (
+      <ListItem
+        key={index}
+        title={item.name}
+        subtitle={item.description}
+        // onPress={() => {
+        //   props.navigation.navigate('LoginSuccess', {
+        //     actorid: item.id,
+        //   });
+        // }}
+        leftAvatar={{source: {uri: item.photo}}}
+      />
+    );
+  };
   return (
     <View>
-      <Text style={styles.textStyle}>
-        Entered username: {props.route.params.usernameval}
-      </Text>
-      <Text style={styles.textStyle}>
-        Entered password: {props.route.params.passwordval}
-      </Text>
+      <FlatList
+        data={fruitslist}
+        renderItem={renderMenuItem}
+        keyExtractor={(item) => item.id.toString()}
+      />
       <Button
         type="solid"
         title="Go Back"
@@ -30,11 +47,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginStart: 10,
     marginEnd: 10,
-  },
-  textStyle: {
-    marginStart: 10,
-    marginTop: 10,
-    fontSize: 20,
   },
 });
 

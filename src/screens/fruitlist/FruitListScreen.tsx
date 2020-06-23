@@ -10,13 +10,12 @@ interface Props {
 const FruitListScreen: React.FC<Props> = (props) => {
   const [fruitslist] = useState(FRUITS);
 
-  const renderMenuItem = ({item, index}) => {
+  const renderMenuItem = ({item, index}: any) => {
     return (
       <ListItem
         key={index}
         title={item.name}
         subtitle={item.description}
-        hideCheveron={true}
         onPress={() => {
           props.navigation.navigate('FruitDisplay', {
             fruitpath: item.image,

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {TextInput} from 'react-native-gesture-handler';
 import {Text, StyleSheet, View, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
+import {storedpassword} from '../../../shared/credentials.json';
+import {storedusername} from '../../../shared/credentials.json';
 
 interface Props {
   navigation: any;
@@ -45,6 +47,14 @@ function validate(props: any, username: string, password: string) {
   }
   if (!password) {
     Alert.alert('Error', 'Please enter password');
+    return;
+  }
+  if (username !== storedusername) {
+    Alert.alert('Error', 'Invalid username');
+    return;
+  }
+  if (password !== storedpassword) {
+    Alert.alert('Error', 'Invalid password');
     return;
   }
   props.navigation.navigate('LoginSuccess', {
