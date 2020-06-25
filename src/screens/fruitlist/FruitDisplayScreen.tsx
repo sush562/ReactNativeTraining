@@ -6,16 +6,26 @@ interface Props {
   route: any;
 }
 
-const FruitDisplayScreen: React.FC<Props> = (props) => {
-  const path = props.route.params.fruitpath;
-  console.log(path);
-  updateTitle(props);
-  return (
-    <View style={styles.container}>
-      <Image style={styles.logo} source={{uri: path}}></Image>
-    </View>
-  );
-};
+interface State {}
+
+class FruitDisplayScreen extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+  }
+
+  render() {
+    this.props.navigation.setOptions({
+      title: this.props.route.params.fruitname,
+    });
+    return (
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={{uri: this.props.route.params.fruitpath}}></Image>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -30,8 +40,12 @@ const styles = StyleSheet.create({
   },
 });
 
-function updateTitle(props: any) {
-  props.navigation.setOptions({title: props.route.params.fruitname});
-}
+// function updateTitle(props: any) {
+//   props.navigation.setOptions({title: props.route.params.fruitname});
+// }
+
+// export const FruitDisplayOptions = {
+//   title: {this.props.route.params.fruitname},
+// };
 
 export default FruitDisplayScreen;

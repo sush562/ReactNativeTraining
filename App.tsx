@@ -8,6 +8,7 @@ import LoginSuccess from './src/screens/login/LoginSuccessPage';
 import FruitList from './src/screens/fruitlist/FruitListScreen';
 import FruitDisplay from './src/screens/fruitlist/FruitDisplayScreen';
 import CalculatorScreen from './src/screens/calculator/CalculatorScreen';
+import MainScreen from './src/screens/MainScreen';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -21,40 +22,41 @@ export default function App() {
     },
   };
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={myOptions} />
-        <Stack.Screen
-          name="MobileList"
-          component={MobileListScreen}
-          options={{...myOptions, title: 'Mobile List'}}
-        />
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{...myOptions, title: 'Login'}}
-        />
-        <Stack.Screen
-          name="LoginSuccess"
-          component={LoginSuccess}
-          options={{...myOptions, title: 'Login Success'}}
-        />
-        <Stack.Screen
-          name="FruitList"
-          component={FruitList}
-          options={{...myOptions, title: 'Fruit List'}}
-        />
-        <Stack.Screen
-          name="FruitDisplay"
-          component={FruitDisplay}
-          options={{...myOptions, title: 'Fruit'}}
-        />
-        <Stack.Screen
-          name="Calculator"
-          component={CalculatorScreen}
-          options={{...myOptions, title: 'Calculator'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <MainScreen />
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Home">
+    //     <Stack.Screen name="Home" component={HomeScreen} options={myOptions} />
+    //     <Stack.Screen
+    //       name="MobileList"
+    //       component={MobileListScreen}
+    //       options={{...myOptions, title: 'Mobile List'}}
+    //     />
+    //     <Stack.Screen
+    //       name="Login"
+    //       component={LoginScreen}
+    //       options={{...myOptions, title: 'Login'}}
+    //     />
+    //     <Stack.Screen
+    //       name="LoginSuccess"
+    //       component={LoginSuccess}
+    //       options={{...myOptions, title: 'Login Success'}}
+    //     />
+    //     <Stack.Screen
+    //       name="FruitList"
+    //       component={FruitList}
+    //       options={{...myOptions, title: 'Fruit List'}}
+    //     />
+    //     <Stack.Screen
+    //       name="FruitDisplay"
+    //       component={FruitDisplay}
+    //       options={{...myOptions, title: 'Fruit'}}
+    //     />
+    //     <Stack.Screen
+    //       name="Calculator"
+    //       component={CalculatorScreen}
+    //       options={{...myOptions, title: 'Calculator'}}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
