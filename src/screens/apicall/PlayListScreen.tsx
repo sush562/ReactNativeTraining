@@ -70,7 +70,7 @@ export class PlayList extends Component<Props, State> {
   }
 }
 
-function renderItem({item, index}) {
+function renderItem({item, index}: any) {
   return (
     <ListItem
       key={index}
