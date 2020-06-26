@@ -7,6 +7,7 @@ import {
   LoginNavigator,
   FruitNavigator,
   CalculatorNavigator,
+  PlaylistNavigator,
 } from '../navigator/AppNavigator';
 
 class Main extends React.Component {
@@ -20,6 +21,7 @@ class Main extends React.Component {
           <Drawer.Screen name="Login" component={LoginNavigator} />
           <Drawer.Screen name="Fruit List" component={FruitNavigator} />
           <Drawer.Screen name="Calculator" component={CalculatorNavigator} />
+          <Drawer.Screen name="Play List" component={PlaylistNavigator} />
         </Drawer.Navigator>
       </NavigationContainer>
     );

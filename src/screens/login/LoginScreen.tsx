@@ -31,7 +31,6 @@ const LoginScreen: React.FC<Props> = (props) => {
       />
       <Button
         type="solid"
-        maxLength={20}
         title="Login"
         buttonStyle={styles.buttonStyle}
         onPress={() => validate(props, username, password)}

@@ -8,6 +8,7 @@ import ActorDetail from '../screens/login/ActorDetailScreen';
 import FruitList from '../screens/fruitlist/FruitListScreen';
 import FruitDisplay from '../screens/fruitlist/FruitDisplayScreen';
 import Calculator from '../screens/calculator/CalculatorScreen';
+import PlayList from '../screens/apicall/PlayListScreen';
 
 const HomeStackNavigator = createStackNavigator();
 
@@ -87,5 +88,19 @@ export const CalculatorNavigator = () => {
         options={{title: 'Calculator'}}
       />
     </CalculatorStackNavigator.Navigator>
+  );
+};
+
+const PlaylistStackNavigator = createStackNavigator();
+
+export const PlaylistNavigator = () => {
+  return (
+    <PlaylistStackNavigator.Navigator>
+      <PlaylistStackNavigator.Screen
+        name="Playlist"
+        component={PlayList}
+        options={{title: 'Playlist'}}
+      />
+    </PlaylistStackNavigator.Navigator>
   );
 };
