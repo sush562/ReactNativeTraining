@@ -12,6 +12,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
+//import com.wix.reactnativenotifications.RNNotificationsPackage;
+//import org.reactnative.camera.RNCameraPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -30,6 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
                     // packages.add(new MyReactNativePackage());
                     packages.add(new RNFirebaseMessagingPackage());
                     packages.add(new RNFirebaseNotificationsPackage());
+                    //packages.add(new RNCameraPackage());
+                    //packages.add(new RNNotificationsPackage(MainApplication.this));
                     return packages;
                 }
 

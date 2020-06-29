@@ -9,6 +9,10 @@ import FruitList from '../screens/fruitlist/FruitListScreen';
 import FruitDisplay from '../screens/fruitlist/FruitDisplayScreen';
 import Calculator from '../screens/calculator/CalculatorScreen';
 import PlayList from '../screens/apicall/PlayListScreen';
+import PushNotification from '../screens/notification/PushNotificationScreen';
+import LocalNotification from '../screens/notification/LocalNotificationScreen';
+import Camera from '../screens/camera/CameraScreen';
+import CameraDisplay from '../screens/camera/CameraDisplayScreen';
 
 const HomeStackNavigator = createStackNavigator();
 
@@ -102,5 +106,43 @@ export const PlaylistNavigator = () => {
         options={{title: 'Playlist'}}
       />
     </PlaylistStackNavigator.Navigator>
+  );
+};
+
+const NotificationStackNavigator = createStackNavigator();
+
+export const NotificationNavigator = () => {
+  return (
+    <CalculatorStackNavigator.Navigator>
+      <CalculatorStackNavigator.Screen
+        name="LocalNotification"
+        component={LocalNotification}
+        options={{title: 'Local Notification'}}
+      />
+      <CalculatorStackNavigator.Screen
+        name="PushNotification"
+        component={PushNotification}
+        options={{title: 'Push Notification'}}
+      />
+    </CalculatorStackNavigator.Navigator>
+  );
+};
+
+const CameraStackNavigator = createStackNavigator();
+
+export const CameraNavigator = () => {
+  return (
+    <CameraStackNavigator.Navigator>
+      <CameraStackNavigator.Screen
+        name="CameraPage"
+        component={Camera}
+        options={{title: 'Camera'}}
+      />
+      <CameraStackNavigator.Screen
+        name="CameraDisplayPage"
+        component={CameraDisplay}
+        options={{title: 'Camera Snapshot'}}
+      />
+    </CameraStackNavigator.Navigator>
   );
 };
