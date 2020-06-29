@@ -15,6 +15,7 @@ import Camera from '../screens/camera/CameraScreen';
 import CameraDisplay from '../screens/camera/CameraDisplayScreen';
 import BeaconImage from '../screens/beacon/BeaconImageScreen';
 import DateTime from '../screens/datetime/DateTimePickerScreen';
+import GeoLocation from '../screens/geolocation/GeoLocationScreen';
 
 const HomeStackNavigator = createStackNavigator();
 
@@ -174,5 +175,19 @@ export const DateTimeNavigator = () => {
         options={{title: 'Date and Time'}}
       />
     </DateTimeStackNavigator.Navigator>
+  );
+};
+
+const GeoLoactionStackNavigator = createStackNavigator();
+
+export const GeoLoactionNavigator = () => {
+  return (
+    <GeoLoactionStackNavigator.Navigator>
+      <GeoLoactionStackNavigator.Screen
+        name="GeoLocation"
+        component={GeoLocation}
+        options={{title: 'Live Location'}}
+      />
+    </GeoLoactionStackNavigator.Navigator>
   );
 };

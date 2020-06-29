@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import {Text, StyleSheet, View, Alert} from 'react-native';
 import {Button} from 'react-native-elements';
-import {TextInput} from 'react-native-gesture-handler';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 
