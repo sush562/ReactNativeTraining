@@ -62,12 +62,6 @@ class CameraScren extends React.PureComponent<Props, State> {
   }
 }
 
-async function getBase64(imageUri: string) {
-  const filepath = imageUri.split('//')[1];
-  const imageUriBase64 = await RNFS.readFile(filepath, 'base64');
-  return `data:image/jpeg;base64,${imageUriBase64}`;
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
