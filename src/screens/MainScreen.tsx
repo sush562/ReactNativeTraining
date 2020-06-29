@@ -10,6 +10,8 @@ import {
   PlaylistNavigator,
   NotificationNavigator,
   CameraNavigator,
+  BeaconNavigator,
+  DateTimeNavigator,
 } from '../navigator/AppNavigator';
 import AsyncStorage from '@react-native-community/async-storage';
 import firebase from 'react-native-firebase';
@@ -129,6 +131,8 @@ class Main extends React.Component<Props, State> {
             component={NotificationNavigator}
           />
           <Drawer.Screen name="Camera" component={CameraNavigator} />
+          <Drawer.Screen name="Image and Beacon" component={BeaconNavigator} />
+          <Drawer.Screen name="Date and Time" component={DateTimeNavigator} />
         </Drawer.Navigator>
       </NavigationContainer>
     );

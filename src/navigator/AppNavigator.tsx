@@ -13,6 +13,8 @@ import PushNotification from '../screens/notification/PushNotificationScreen';
 import LocalNotification from '../screens/notification/LocalNotificationScreen';
 import Camera from '../screens/camera/CameraScreen';
 import CameraDisplay from '../screens/camera/CameraDisplayScreen';
+import BeaconImage from '../screens/beacon/BeaconImageScreen';
+import DateTime from '../screens/datetime/DateTimePickerScreen';
 
 const HomeStackNavigator = createStackNavigator();
 
@@ -144,5 +146,33 @@ export const CameraNavigator = () => {
         options={{title: 'Camera Snapshot'}}
       />
     </CameraStackNavigator.Navigator>
+  );
+};
+
+const BeaconStackNavigator = createStackNavigator();
+
+export const BeaconNavigator = () => {
+  return (
+    <BeaconStackNavigator.Navigator>
+      <BeaconStackNavigator.Screen
+        name="BeaconImagePage"
+        component={BeaconImage}
+        options={{title: 'Images and Beacon'}}
+      />
+    </BeaconStackNavigator.Navigator>
+  );
+};
+
+const DateTimeStackNavigator = createStackNavigator();
+
+export const DateTimeNavigator = () => {
+  return (
+    <DateTimeStackNavigator.Navigator>
+      <DateTimeStackNavigator.Screen
+        name="DateTimePage"
+        component={DateTime}
+        options={{title: 'Date and Time'}}
+      />
+    </DateTimeStackNavigator.Navigator>
   );
 };
