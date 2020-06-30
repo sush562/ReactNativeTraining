@@ -105,15 +105,15 @@ class Main extends React.Component<Props, State> {
   }
 
   displayNotification(title: string, body: string, key_integer: string) {
-    // we display notification in alert box with title and body
-    // Alert.alert(
-    //   key_integer,
-    //   body + title,
-    //   [{text: 'Ok', onPress: () => console.log('ok pressed')}],
-    //   {cancelable: false},
-    // );
-    console.log(title);
-    this.state.initialRoute = 'Mobile List';
+    //we display notification in alert box with title and body
+    Alert.alert(
+      key_integer,
+      body + ' ' + title,
+      [{text: 'Ok', onPress: () => console.log('ok pressed')}],
+      {cancelable: false},
+    );
+    // console.log(title);
+    // this.state.initialRoute = 'Mobile List';
   }
 
   render() {
